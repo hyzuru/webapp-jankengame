@@ -72,7 +72,8 @@ export default {
           let resultNum = parseInt(this.imgList.indexOf(this.src), 10)
           let selectNum = parseInt(button.value, 10) /* 第一引数に渡した値を10進数に変換して返す */
           let kekkaNum = this.decisionJanken(selectNum, resultNum)
-          this.doUpdate(kekkaNum)
+        //   this.doUpdate(kekkaNum)
+          this.$store.commit('setScore', kekkaNum) 
           window.console.log('勝ち負け(0 は負け, 1は勝ち,2は引き分け)→' + this.decisionJanken(selectNum, resultNum))
       },
       decisionJanken(myHand, cpuHand) {
